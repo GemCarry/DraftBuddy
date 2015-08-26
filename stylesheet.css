@@ -1,0 +1,84 @@
+
+html {
+	text-align: center;
+	background: black;
+	color: white;
+	font-family: "Tahoma", "Geneva", serif;
+}
+
+#header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	font-size: 20rem;
+	height: 50px;
+	background: linear-gradient(to left,black,black,#644,black,black);
+	animation: titlebounce 1s linear infinite;
+}
+
+.selecto {
+	background: black;
+	border: 1px solid #000;
+	color: white;
+	height: 32px;
+	width: 250px;
+	font-size: 12px;
+	vertical-align: text-top;
+	text-align:right;
+	background-image:url(images/hand_of_midas.png);
+	background-repeat:no-repeat;
+	background-size: 25% 100%;
+	padding: 1px 1px 1px 1px;
+}
+
+
+#body {
+	padding-top: 100px;
+	padding-left: 125px;
+	padding-right: 375px;
+	font-size: 10px;
+}
+
+
+#sidebar_L {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 125px;
+	background: linear-gradient(to left,black, #644);
+}
+
+#sidebar_R {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	width: 125px;
+	background: linear-gradient(to right, black, #644);
+}
+
+#myChart {
+	float: right;
+	padding-top: 100px;
+	padding-right: 200px;
+}
+
+
+div.hero_select {
+	text-align: left;
+	font-size: 16px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.hero_image {
+	float: left;
+	width: 50px;
+	height: 32px;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-left: 5px;
+
+}
