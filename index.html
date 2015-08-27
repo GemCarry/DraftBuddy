@@ -23,19 +23,79 @@
 
 	<div id="hh2">
 		"Thinking, so you don't have to!"
+		<a href="herobrowser.html">HeroBrowser</a>
 	</div>
 
 </div>
+	
+<br>
 
-
-
-	<div id="sidebar_L">
-		<a href="testarino.html">charty the chartapult</a>
+<ul id="input_flex" class="flex-container">
+<div id="body">
+	<li class="flex-item">
+	<div id="good_selections">
+		<ul>
+			<li><div class="hero_select">
+				Hard Carry:
+				<select id="$1pos" name="0" class="selecto" onchange="$set_pos(this)" ><option selected style="display:none">PICK</select>
+				</div></li>
+	        <li><div class="hero_select">
+				Midlaner:
+				<select id="$2pos" name="1" class="selecto" onchange="$set_pos(this)" ><option selected style="display:none">PICK</select>
+	        	</div></li>
+        	<li><div class="hero_select">
+				Offlaner:
+				<select id="$3pos" name="2" class="selecto" onchange="$set_pos(this)" ><option selected style="display:none">PICK</select>
+	        	</div></li>
+        	<li><div class="hero_select">
+				Secondary Support:
+				<select id="$4pos" name="3" class="selecto" onchange="$set_pos(this)" ><option selected style="display:none">PICK</select>
+	        	</div></li>
+        	<li><div class="hero_select">
+				Hard Support:
+				<select id="$5pos" name="4" class="selecto" onchange="$set_pos(this)" ><option selected style="display:none">PICK</select>
+        		</div></li>
+		</ul>
 	</div>
-	<div id="sidebar_R">
-		testR
+	</li>
+
+	<li class="flex-item">
+	<br>
+	<div id="recommender">Recomended Hero: <img id="recpic" src="images/blink.png"></div>
+	</li>
+
+	<li class="flex-item">
+	<div id="bad_selections">
+		<ul>
+			<li><div class="hero_select">
+				Enemy's Hard Carry:
+				<select id="$e1pos" name="5" class="selecto" onchange="$set_pos(this)"><option selected style="display:none">PICK</select>
+				</div></li>
+	        <li><div class="hero_select">
+				Enemy's Midlaner:
+				<select id="$e2pos" name="6" class="selecto" onchange="$set_pos(this)"><option selected style="display:none">PICK</select>
+	        	</div></li>
+        	<li><div class="hero_select">
+				Enemy's Offlaner:
+				<select id="$e3pos" name="7" class="selecto" onchange="$set_pos(this)"><option selected style="display:none">PICK</select>
+	        	</div></li>
+        	<li><div class="hero_select">
+				Enemy's Secondary Support:
+				<select id="$e4pos" name="8" class="selecto" onchange="$set_pos(this)"><option selected style="display:none">PICK</select>
+	        	</div></li>
+        	<li><div class="hero_select">
+				Enemy's Hard Support:
+				<select id="$e5pos" name="9" class="selecto" onchange="$set_pos(this)"><option selected style="display:none">PICK</select>
+        		</div></li>
+		</ul>
 	</div>
-	<canvas id="myChart" width="250" height="250"></canvas>
+	</li>
+
+</div>
+<ul id="display_flex" class="flex-container">
+<li class="flex-item"> <canvas id="myChart" width="250" height="250"></canvas> </li>
+<li class="flex-item"> <ul id="rec_list">""</ul> </li>
+</ul>
 
 <script id="_radarRun">
 			
@@ -72,71 +132,6 @@
 		
 		</script> 
 
-
-<br>
-
-
-<div id="body">
-
-	<div id="good_selections">
-		<ul>
-			<li><div class="hero_select">
-				Hard Carry:
-				<select id="$1pos" name="0" class="selecto" onchange="$set_pos(this)" ><option selected style="display:none">PICK</select>
-				</div></li>
-	        <li><div class="hero_select">
-				Midlaner:
-				<select id="$2pos" name="1" class="selecto" onchange="$set_pos(this)" ><option selected style="display:none">PICK</select>
-	        	</div></li>
-        	<li><div class="hero_select">
-				Offlaner:
-				<select id="$3pos" name="2" class="selecto" onchange="$set_pos(this)" ><option selected style="display:none">PICK</select>
-	        	</div></li>
-        	<li><div class="hero_select">
-				Secondary Support:
-				<select id="$4pos" name="3" class="selecto" onchange="$set_pos(this)" ><option selected style="display:none">PICK</select>
-	        	</div></li>
-        	<li><div class="hero_select">
-				Hard Support:
-				<select id="$5pos" name="4" class="selecto" onchange="$set_pos(this)" ><option selected style="display:none">PICK</select>
-        		</div></li>
-		</ul>
-	</div>
-
-	<br>
-	<div id="recommender">Recomended Hero: <img id="recpic" src="images/blink.png"></div>
-
-
-	<br><br><br>
-
-	<div id="bad_selections">
-		<ul>
-			<li><div class="hero_select">
-				Enemy's Hard Carry:
-				<select id="$e1pos" name="5" class="selecto" onchange="$set_pos(this)"><option selected style="display:none">PICK</select>
-				</div></li>
-	        <li><div class="hero_select">
-				Enemy's Midlaner:
-				<select id="$e2pos" name="6" class="selecto" onchange="$set_pos(this)"><option selected style="display:none">PICK</select>
-	        	</div></li>
-        	<li><div class="hero_select">
-				Enemy's Offlaner:
-				<select id="$e3pos" name="7" class="selecto" onchange="$set_pos(this)"><option selected style="display:none">PICK</select>
-	        	</div></li>
-        	<li><div class="hero_select">
-				Enemy's Secondary Support:
-				<select id="$e4pos" name="8" class="selecto" onchange="$set_pos(this)"><option selected style="display:none">PICK</select>
-	        	</div></li>
-        	<li><div class="hero_select">
-				Enemy's Hard Support:
-				<select id="$e5pos" name="9" class="selecto" onchange="$set_pos(this)"><option selected style="display:none">PICK</select>
-        		</div></li>
-		</ul>
-	</div>
-
-</div>
-
-<ul id="rec_list">""</ul>
 
 
 </div>

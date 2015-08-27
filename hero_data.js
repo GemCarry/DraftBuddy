@@ -63,6 +63,40 @@ function $fillOptions() {
 	}
 }
 
+
+
+function $boldify() {
+	var tobold = document.getElementById("Antimagei");
+	tobold.style.height = "55px";
+}
+
+function $boldify_cancel() {
+	var tobold = document.getElementById("Antimagei");
+	tobold.style.height = "45px";
+}
+
+function $test() {alert("Success!")}
+function $fillIcons() {
+	for (var i=0; i<size; i++) {
+	        var ulist = document.getElementById("flex_hb_img");
+	        var url = HeroArray[i].Lava;
+	        var img = new Image();
+	        img.src = url;
+	        img.class = "flex_hb_icon";
+	        img.id = HeroArray[i].Lname + "i";
+	        
+	       // alert(img.id);
+	       // img.onClick = "$test()";
+	       // img.onMouseover = "$test()";
+	        //img.onMouseout = "$boldify_cancel()";
+	        ulist.appendChild(img);
+	}
+	for (var i=0; i<size; i++) {
+			img.addEventListener("mouseover", function() {document.getElementById(img.id).style.height = "55px"} );
+	        img.addEventListener("mouseout", function() {document.getElementById(img.id).style.height = "45px"} );
+	}
+}
+
 function $recommend() {
 	document.getElementById("rec_list").innerHTML = "Recommend %";
 	var carr_need = 50 + 5*(ecarr - carr); //value comparisons generate coefficent between -20 and 20 | outputs value between 10 and 100 ????

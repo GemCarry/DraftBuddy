@@ -11,8 +11,8 @@ html {
 	top: 0;
 	left: 0;
 	right: 0;
-	font-size: 20rem;
-	height: 50px;
+	font-size: 1rem;
+	height: 3rem;
 	background: linear-gradient(to left,black,black,#644,black,black);
 	animation: titlebounce 1s linear infinite;
 }
@@ -32,21 +32,65 @@ html {
 	padding: 1px 1px 1px 1px;
 }
 
+.flex-container {
+	background: #224;
+	display: flex;
+	width: 40%;
+	min-height: 500px;
+	align-items: center;
+	flex-direction: column;
+}
 
-#body {
+#display_flex {
+	float: right;
+}
+
+#input_flex {
+	float: left;
+}
+
+.flex-item {
+	flex-grow: 1;
+}
+
+/*#body {
 	padding-top: 100px;
 	padding-left: 125px;
 	padding-right: 375px;
 	font-size: 10px;
+}*/
+
+#myChart {
+	/*float: right;
+	padding-top: 100px;
+	padding-right: 200px;*/
 }
 
 
-#sidebar_L {
+div.hero_select {
+	/*text-align: left;
+	font-size: 16px;
+	padding-left: 5px;
+	padding-right: 5px;*/
+}
+
+/*.hero_image {
+	float: left;
+	width: 50px;
+	height: 32px;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-left: 5px;
+
+}*/
+
+/*#sidebar_L {
 	position: absolute;
 	top: 0;
 	bottom: 0;
 	left: 0;
-	width: 125px;
+	width: 10%;
+	height: 100%;
 	background: linear-gradient(to left,black, #644);
 }
 
@@ -55,30 +99,7 @@ html {
 	top: 0;
 	bottom: 0;
 	right: 0;
-	width: 125px;
+	width: 10%;
+	height: 100%;
 	background: linear-gradient(to right, black, #644);
-}
-
-#myChart {
-	float: right;
-	padding-top: 100px;
-	padding-right: 200px;
-}
-
-
-div.hero_select {
-	text-align: left;
-	font-size: 16px;
-	padding-left: 5px;
-	padding-right: 5px;
-}
-
-.hero_image {
-	float: left;
-	width: 50px;
-	height: 32px;
-	padding-top: 5px;
-	padding-right: 5px;
-	padding-left: 5px;
-
-}
+}*/
