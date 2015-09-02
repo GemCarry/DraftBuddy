@@ -63,37 +63,57 @@ function $fillOptions() {
 	}
 }
 
+document.getElementsByClassName("flex_hb_icon").onclick = $boldify;
 
 
-function $boldify() {
-	var tobold = document.getElementById("Antimagei");
-	tobold.style.height = "55px";
+function $boldify(self) {
+	//document.getElementById(self).style.background = "white";
+	document.getElementById(self).style.marginTop = "0px";
+	document.getElementById(self).style.paddingTop = "13px";
+	document.getElementById(self).style.paddingLeft = "25px";
+	document.getElementById(self).style.paddingBottom = "400px";
+	document.getElementById(self).style.paddingRight = "400px";
+	document.getElementById(self).parentNode.background = "blue";
+	//$display_info(self);
 }
 
-function $boldify_cancel() {
-	var tobold = document.getElementById("Antimagei");
-	tobold.style.height = "45px";
+function $boldify_cancel(self) {
+	//document.getElementById(self).style.background = "white";
+	document.getElementById(self).style.marginTop = "13px";
+	document.getElementById(self).style.paddingTop = "0px";
+	document.getElementById(self).style.paddingLeft = "0px";
+	document.getElementById(self).style.paddingBottom = "0px";
+	document.getElementById(self).style.paddingRight = "0px";
 }
 
-function $test() {alert("Success!")}
+
+function $test(info) {alert(info)}
 function $fillIcons() {
+
+	var ulist = document.getElementById("flex_hb_img");
+	var li = [];
+	var url = [];
+	var img = [];
+	var info = [];
+
 	for (var i=0; i<size; i++) {
-	        var ulist = document.getElementById("flex_hb_img");
-	        var url = HeroArray[i].Lava;
-	        var img = new Image();
-	        img.src = url;
-	        img.class = "flex_hb_icon";
-	        img.id = HeroArray[i].Lname + "i";
-	        
-	       // alert(img.id);
-	       // img.onClick = "$test()";
-	       // img.onMouseover = "$test()";
-	        //img.onMouseout = "$boldify_cancel()";
-	        ulist.appendChild(img);
-	}
-	for (var i=0; i<size; i++) {
-			img.addEventListener("mouseover", function() {document.getElementById(img.id).style.height = "55px"} );
-	        img.addEventListener("mouseout", function() {document.getElementById(img.id).style.height = "45px"} );
+		// Create Primary List Element
+        li[i] = document.createElement("li");
+        li[i].className = "flex_hb_icon_box";	 
+        li[i].id = i + "il";
+        ulist.appendChild(li[i]);
+
+        // Create Image Element
+        url[i] = HeroArray[i].Lava;
+        img[i] = new Image();
+        img[i].src = url[i];
+        img[i].className = "flex_hb_icon";
+        img[i].id = i + "i";
+        li[i].appendChild(img[i]); 
+
+        // Assigns Mouseover Behaviors
+        li[i].onmouseover = function(j) { return function() {$boldify(img[j].id)} }(i);
+        li[i].onmouseout = function(j) { return function() {$boldify_cancel(img[j].id)} }(i);
 	}
 }
 
@@ -188,4 +208,6 @@ function $update_score_total() {
 	myChart.update();
 	$recommend();
 }
+
+$(function(){$("flex_hb_icon").click($boldify);}); 
 

@@ -6,6 +6,7 @@ html {
 	font-family: "Tahoma", "Geneva", serif;
 }
 
+
 #header {
 	position: absolute;
 	top: 0;
@@ -33,7 +34,7 @@ html {
 }
 
 .flex-container {
-	background: #224;
+	background: #222;
 	display: flex;
 	width: 40%;
 	min-height: 500px;
@@ -52,6 +53,40 @@ html {
 .flex-item {
 	flex-grow: 1;
 }
+
+.flex_hb_icon_box {
+	height: 70px;
+	width : 100px;
+	border-radius: 10px;
+	background: gray;
+}
+
+/*.flex_hb_icon_box:hover {
+	padding-left: 125px;
+}*/
+
+
+.flex_hb_icon {
+	margin-top: 13px;  /*13*/
+	height: 50px;
+	border-radius: 10px;
+	background: lightgray;
+}
+
+/*.flex_hb_icon:hover {
+	margin-top: 5px;
+	height: 60px;
+
+}*/
+
+#image_chaser {
+	position: absolute;
+	top: 100px;
+}
+
+/*#comeon:hover {
+	background: red;
+}*/
 
 /*#body {
 	padding-top: 100px;
@@ -73,33 +108,3 @@ div.hero_select {
 	padding-left: 5px;
 	padding-right: 5px;*/
 }
-
-/*.hero_image {
-	float: left;
-	width: 50px;
-	height: 32px;
-	padding-top: 5px;
-	padding-right: 5px;
-	padding-left: 5px;
-
-}*/
-
-/*#sidebar_L {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	width: 10%;
-	height: 100%;
-	background: linear-gradient(to left,black, #644);
-}
-
-#sidebar_R {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	width: 10%;
-	height: 100%;
-	background: linear-gradient(to right, black, #644);
-}*/

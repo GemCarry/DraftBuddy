@@ -91,49 +91,48 @@
 	</div>
 	</li>
 
+	</div>
+	<ul id="display_flex" class="flex-container">
+	<li class="flex-item"> <canvas id="myChart" width="250" height="250"></canvas> </li>
+	<li class="flex-item"> <ul id="rec_list">""</ul> </li>
+	</ul>
+
+	<script id="_radarRun">
+				
+		var data = {
+		    labels: ["Support","Carry","Survivability","Teamfight","Pushing","Disables"],
+		    datasets: [
+		        {
+		            label: "YourRating",
+		            fillColor: "rgba(0,220,0,0.2)",
+		            strokeColor: "rgba(220,220,220,1)",
+		            pointColor: "rgba(220,220,220,1)",
+		            pointStrokeColor: "#fff",
+		            pointHighlightFill: "#fff",
+		            pointHighlightStroke: "rgba(220,220,220,1)",
+		            data: [supp,carr,surv,team,push,disa]
+		        },
+		        {
+		            label: "EnemyRating",
+		            fillColor: "rgba(220,0,0,0.2)",
+		            strokeColor: "rgba(151,187,205,1)",
+		            pointColor: "rgba(151,187,205,1)",
+		            pointStrokeColor: "#fff",
+		            pointHighlightFill: "#fff",
+		            pointHighlightStroke: "rgba(151,187,205,1)",
+		            data: [esupp,ecarr,esurv,eteam,epush,edisa]
+		        }
+		    ]
+		};
+
+		var ctx = document.getElementById("myChart").getContext("2d");
+		var myChart = new Chart(ctx).Radar(data,{pointLabelFontSize: 10});
+	</script> 
 </div>
-<ul id="display_flex" class="flex-container">
-<li class="flex-item"> <canvas id="myChart" width="250" height="250"></canvas> </li>
-<li class="flex-item"> <ul id="rec_list">""</ul> </li>
-</ul>
 
-<script id="_radarRun">
-			
-			var data = {
-			    labels: ["Support","Carry","Survivability","Teamfight","Pushing","Disables"],
-			    datasets: [
-			        {
-			            label: "YourRating",
-			            fillColor: "rgba(0,220,0,0.2)",
-			            strokeColor: "rgba(220,220,220,1)",
-			            pointColor: "rgba(220,220,220,1)",
-			            pointStrokeColor: "#fff",
-			            pointHighlightFill: "#fff",
-			            pointHighlightStroke: "rgba(220,220,220,1)",
-			            data: [supp,carr,surv,team,push,disa]
-			        },
-			        {
-			            label: "EnemyRating",
-			            fillColor: "rgba(220,0,0,0.2)",
-			            strokeColor: "rgba(151,187,205,1)",
-			            pointColor: "rgba(151,187,205,1)",
-			            pointStrokeColor: "#fff",
-			            pointHighlightFill: "#fff",
-			            pointHighlightStroke: "rgba(151,187,205,1)",
-			            data: [esupp,ecarr,esurv,eteam,epush,edisa]
-			        }
-			    ]
-			};
-
-			var ctx = document.getElementById("myChart").getContext("2d");
-			var myChart = new Chart(ctx).Radar(data,{pointLabelFontSize: 10});
-
-	
-		
-		</script> 
+<ul id="flex_hb_img"></ul>
 
 
-
-</div>
 <script>$fillOptions()</script>
+<script>$fillIcons()</script>
 </html>
