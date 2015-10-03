@@ -10,129 +10,76 @@
 	<script id: "_js" src="hero_data.js"></script>
 	<script id="_radar" src="chart.js"></script>
 	<link id: "_css" rel="stylesheet" type="text/css" href="stylesheet.css">
-	<audio controls autoplay loop>
-		<!-- <source src="audio/pick_metal.wav" type="audio/wav"> -->
-	</audio>
 </head>
 
-<div id="header">
 
-	<div id="hh1">
-		Draftbuddy:
-	</div>
-
-	<div id="hh2">
-		"Thinking, so you don't have to!"
-		<a href="herobrowser.html">HeroBrowser</a>
-	</div>
-
-</div>
-	
-<br>
-
-<ul id="input_flex" class="flex-container">
-<div id="body">
-	<li class="flex-item">
-	<div id="good_selections">
-		<ul>
-			<li><div class="hero_select">
-				Hard Carry:
-				<select id="$1pos" name="0" class="selecto" onchange="$set_pos(this)" ><option selected style="display:none">PICK</select>
-				</div></li>
-	        <li><div class="hero_select">
-				Midlaner:
-				<select id="$2pos" name="1" class="selecto" onchange="$set_pos(this)" ><option selected style="display:none">PICK</select>
-	        	</div></li>
-        	<li><div class="hero_select">
-				Offlaner:
-				<select id="$3pos" name="2" class="selecto" onchange="$set_pos(this)" ><option selected style="display:none">PICK</select>
-	        	</div></li>
-        	<li><div class="hero_select">
-				Secondary Support:
-				<select id="$4pos" name="3" class="selecto" onchange="$set_pos(this)" ><option selected style="display:none">PICK</select>
-	        	</div></li>
-        	<li><div class="hero_select">
-				Hard Support:
-				<select id="$5pos" name="4" class="selecto" onchange="$set_pos(this)" ><option selected style="display:none">PICK</select>
-        		</div></li>
-		</ul>
-	</div>
-	</li>
-
-	<li class="flex-item">
-	<br>
-	<div id="recommender">Recomended Hero: <img id="recpic" src="images/blink.png"></div>
-	</li>
-
-	<li class="flex-item">
-	<div id="bad_selections">
-		<ul>
-			<li><div class="hero_select">
-				Enemy's Hard Carry:
-				<select id="$e1pos" name="5" class="selecto" onchange="$set_pos(this)"><option selected style="display:none">PICK</select>
-				</div></li>
-	        <li><div class="hero_select">
-				Enemy's Midlaner:
-				<select id="$e2pos" name="6" class="selecto" onchange="$set_pos(this)"><option selected style="display:none">PICK</select>
-	        	</div></li>
-        	<li><div class="hero_select">
-				Enemy's Offlaner:
-				<select id="$e3pos" name="7" class="selecto" onchange="$set_pos(this)"><option selected style="display:none">PICK</select>
-	        	</div></li>
-        	<li><div class="hero_select">
-				Enemy's Secondary Support:
-				<select id="$e4pos" name="8" class="selecto" onchange="$set_pos(this)"><option selected style="display:none">PICK</select>
-	        	</div></li>
-        	<li><div class="hero_select">
-				Enemy's Hard Support:
-				<select id="$e5pos" name="9" class="selecto" onchange="$set_pos(this)"><option selected style="display:none">PICK</select>
-        		</div></li>
-		</ul>
-	</div>
-	</li>
-
-	</div>
-	<ul id="display_flex" class="flex-container">
-	<li class="flex-item"> <canvas id="myChart" width="250" height="250"></canvas> </li>
-	<li class="flex-item"> <ul id="rec_list">""</ul> </li>
-	</ul>
-
-	<script id="_radarRun">
-				
-		var data = {
-		    labels: ["Support","Carry","Survivability","Teamfight","Pushing","Disables"],
-		    datasets: [
-		        {
-		            label: "YourRating",
-		            fillColor: "rgba(0,220,0,0.2)",
-		            strokeColor: "rgba(220,220,220,1)",
-		            pointColor: "rgba(220,220,220,1)",
-		            pointStrokeColor: "#fff",
-		            pointHighlightFill: "#fff",
-		            pointHighlightStroke: "rgba(220,220,220,1)",
-		            data: [supp,carr,surv,team,push,disa]
-		        },
-		        {
-		            label: "EnemyRating",
-		            fillColor: "rgba(220,0,0,0.2)",
-		            strokeColor: "rgba(151,187,205,1)",
-		            pointColor: "rgba(151,187,205,1)",
-		            pointStrokeColor: "#fff",
-		            pointHighlightFill: "#fff",
-		            pointHighlightStroke: "rgba(151,187,205,1)",
-		            data: [esupp,ecarr,esurv,eteam,epush,edisa]
-		        }
-		    ]
-		};
-
-		var ctx = document.getElementById("myChart").getContext("2d");
-		var myChart = new Chart(ctx).Radar(data,{pointLabelFontSize: 10});
-	</script> 
+<div id="hero_grid_div">
+	<ul id="hero_grid"></ul>
 </div>
 
-<ul id="flex_hb_img"></ul>
+<div id="info_window" float="right">
+	<span id="info_window_text">TEXT</span>
+		<img id="info_window_add_evil" src="images/sange.png" onclick="$add_evil()">
+		<img id="info_window_add_good" src="images/yasha.png" onclick="$add_good()">
+		<img id="info_window_img" src="images/hand_of_midas.png">
+		<canvas id="chart_canvas" background="pink"></canvas>
+</div>
+
+<div id="comp_window">
+	TEAM COMPOSITIONS
+	<ul id="comp_window_ul"></ul>
+	<ul id="comp_window_bad_ul"></ul>
+	<canvas id="chart_canvas_comp"></canvas>
+</div>
 
 
-<script>$fillOptions()</script>
-<script>$fillIcons()</script>
+<script id="_radarRun">		
+	var data = {
+	    labels: ["Carry","Support","Survivability","Teamfight","Disables","Pushing"],
+	    datasets: [
+	        {
+	            label: "YourRating",
+	            fillColor: "rgba(0,100,0,0.5)",
+	            strokeColor: "rgba(0,255,0,1)",
+	            pointColor: "rgba(0,255,0,1)",
+	            pointStrokeColor: "#000",
+	            pointHighlightFill: "#000",
+	            pointHighlightStroke: "rgba(220,220,220,1)",
+	            data: [carr,supp,surv,team,disa,push]
+	        },
+	        {
+	            label: "EnemyRating",
+	            fillColor: "rgba(100,0,0,0.3)",
+	            strokeColor: "rgba(255,0,0,1)",
+	            pointColor: "rgba(255,0,0,1)",
+	            pointStrokeColor: "#000",
+	            pointHighlightFill: "#000",
+	            pointHighlightStroke: "rgba(220,220,200,1)",
+	            data: [ecarr,esupp,esurv,eteam,edisa,epush]
+	        },
+	        {
+	            label: "RecommendedRating",
+	            fillColor: "rgba(0,0,100,0.1)",
+	            strokeColor: "rgba(0,0,255,1)",
+	            pointColor: "rgba(0,0,255,1)",
+	            pointStrokeColor: "#000",
+	            pointHighlightFill: "#000",
+	            pointHighlightStroke: "rgba(220,220,220,1)",
+	            data: [rcarr,rsupp,rsurv,rteam,rdisa,rpush]
+	        }
+	    ]
+	};
+	var ctx = document.getElementById("chart_canvas").getContext("2d");
+	var myChart = new Chart(ctx).Radar(data,{pointLabelFontSize: 10, pointLabelFontColor: "#fff"});
+
+	var ctx_comp = document.getElementById("chart_canvas_comp").getContext("2d");
+	var myChart_comp = new Chart(ctx_comp).Radar(data,{pointLabelFontSize: 10, pointLabelFontColor: "#fff"});
+</script> 
+
+
+<script>
+	$drawGridBoxes();
+	$init_comp_icons();
+</script>
+
 </html>
