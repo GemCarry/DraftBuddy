@@ -6,79 +6,132 @@ html {
 	font-family: "Tahoma", "Geneva", serif;
 }
 
-#header {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	font-size: 20rem;
-	height: 50px;
-	background: linear-gradient(to left,black,black,#644,black,black);
-	animation: titlebounce 1s linear infinite;
-}
 
-.selecto {
-	background: black;
-	border: 1px solid #000;
-	color: white;
-	height: 32px;
-	width: 250px;
-	font-size: 12px;
-	vertical-align: text-top;
-	text-align:right;
-	background-image:url(images/hand_of_midas.png);
-	background-repeat:no-repeat;
-	background-size: 25% 100%;
-	padding: 1px 1px 1px 1px;
-}
-
-
-#body {
-	padding-top: 100px;
-	padding-left: 125px;
-	padding-right: 375px;
-	font-size: 10px;
-}
-
-
-#sidebar_L {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	width: 125px;
-	background: linear-gradient(to left,black, #644);
-}
-
-#sidebar_R {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	width: 125px;
-	background: linear-gradient(to right, black, #644);
-}
-
-#myChart {
-	float: right;
-	padding-top: 100px;
-	padding-right: 200px;
-}
-
-
-div.hero_select {
-	text-align: left;
-	font-size: 16px;
-	padding-left: 5px;
-	padding-right: 5px;
-}
-
-.hero_image {
+#hero_grid_div {
 	float: left;
-	width: 50px;
-	height: 32px;
-	padding-top: 5px;
-	padding-right: 5px;
-	padding-left: 5px;
+	width: 55%;
+	height: 80%;
+	background: gray;
+	border-radius: 10px;
+}
+
+#info_window {
+	float: right;
+	width: 40%;
+	height: 100%;
+	background: gray;
+	border-radius: 10px;
+}
+
+#chart_canvas {
+	float: right;
+	width: 50%;
+	height: 100%;
+}
+
+#info_window_text {
+	float: left;
+	width: 40%;
+	height: 25%;
+}
+
+#info_window_img {
+	float: right;
+	width: 15%;
+	height: 50%;	
+}
+
+#info_window_add_good {
+	float: right;
+	width: 15%;
+	height: 50%;
+}
+
+#info_window_add_evil {
+	float: right;
+	width: 15%;
+	height: 50%;
+}
+
+#comp_window {
+	float: right;
+	width: 40%;
+	height: 100%;
+	background: gray;
+	border-radius: 10px;
+}
+
+.gORe_img {
+	border-radius: 5px;
+	float: center;
+	width: 75px;
+	height: 50px;
+	
+}
+
+.hero_icon {
+	border-radius: 10px;
+}
+
+#chart_canvas_comp {
+	float: center;
+	width: 100%;
+	height: 100%;
+}
+
+@media screen and (max-width: 640px) {
+
+	#hero_grid_div {
+		float: left;
+		width: 25%;
+	}
+
+	#chart_canvas {
+		display: none;
+	}
+
+	#info_window_text {
+		display: none;
+	}
+
+	#info_window_img {
+		float: right;
+		width: 15%;
+		height: 50%;	
+	}
+
+	#info_window_add_good {
+		float: right;
+		width: 15%;
+		height: 50%;
+	}
+
+	#info_window_add_evil {
+		float: right;
+		width: 15%;
+		height: 50%;
+	}
+
+	#comp_window {
+		float: right;
+		width: 40%;
+		height: 100%;
+		background: gray;
+		border-radius: 0px;
+	}
+
+	.gORe_img {
+		display: none;
+		
+	}
+
+	.hero_icon {
+		border-radius: 0px;
+	}
+
+	#chart_canvas_comp {
+		height: 50%;
+		width: 50%;
+	}
 
 }
